@@ -1,0 +1,14 @@
+name: Workflow Demo 1
+on: [push]
+
+jobs:
+    run-shell-commands:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout repository
+              run: echo "hello world"
+
+            - name: Multiline command
+              run: |
+                  node -v
+                  npm -v
