@@ -1,0 +1,43 @@
+name: Working Dirs and Shells
+on: [push]
+defaults:
+    run:
+        working-directory: /scripts
+        shell: bash
+jobs:
+    display-wd-info:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Display Working Directory and List files
+              run: |
+                  pwd
+                  ls -la
+                  echo $GITHUB_SHA
+                  echo $GITHUB_REF
+                  echo $GITHUB_REPOSITORY
+                  echo $GITHUB_WORKSPACE
+
+            - name: Change Directory
+              working-directory: /home/runner
+              run: pwd
+    display-wd-info-windows:
+        runs-on: windows-latest
+        defaults:
+            run:
+                shell: pwsh
+        steps:
+            - name: Display Working Directory and List Files
+              run: |
+                  Get-Location
+                  dir
+                  echo $GITHUB_SHA
+                  echo $GITHUB_REF
+                  echo $GITHUB_REPOSITORY
+                  echo $GITHUB_WORKSPACE
+            - name: Pyhon Shell
+              shell: python
+              run: |
+                  import platform
+                  print(platform.system())
+                  print(platform.release())
+                  print(platform.version())
