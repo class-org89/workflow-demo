@@ -12,3 +12,5 @@ jobs:
                   who-to-greet: "shubham saini"
             - name: Log Greeting Time
               run: echo "Greeting time was ${{steps.greet.outputs.time}}"
+            - name: Checkout current repo
+              uses: actions/checkout@v5
