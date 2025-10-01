@@ -1,7 +1,6 @@
 name: Cross-Platform System Info
 
-on:
-    push:
+on: [push]
 
 jobs:
     ubuntu-job:
@@ -13,7 +12,7 @@ jobs:
             - name: Print system info
               run: |
                   echo "OS: $(uname -a)"
-                  echo "Disk usage:"
+                  echo "Disk usagee:"
                   df -h
                   echo "CPU info:"
                   lscpu || true
