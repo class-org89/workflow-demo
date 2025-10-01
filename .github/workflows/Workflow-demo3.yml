@@ -9,11 +9,12 @@ jobs:
               run: ls -la
             - name: Checkout Repository
               run: |
-                  git init
-                  git remote add origin "https://$GITHUB_ACTOR:$((
-                      secrets.GITHUB_TOKEN
-                  ))@github.com/$GITHUB_REPOSITORY.git"
-                  git fetch origin
-                  git checkout main
+                  #   git init
+                  #   git remote add origin "https://$GITHUB_ACTOR:$((
+                  #       secrets.GITHUB_TOKEN
+                  #   ))@github.com/$GITHUB_REPOSITORY.git"
+                  #   git fetch origin
+                  #   git checkout main
+                  git clone https://github.com/class-org89/workflow-demo.git
             - name: List Files After Checkout
               run: ls -la
