@@ -2,7 +2,7 @@ name: Working Dirs and Shells
 on: [push]
 defaults:
     run:
-        working-directory: /home/scripts
+        # working-directory: /home/scripts
         shell: bash
 jobs:
     display-wd-info:
