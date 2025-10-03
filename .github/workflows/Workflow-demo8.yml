@@ -4,6 +4,10 @@ on:
         # - cron: "0 14 * * *" # everyday at 2pm
         - cron: "*/5 * * * *" #every 1 min
 
+permissions:
+    issues: write
+    pull-requests: write
+
 jobs:
     stale:
         runs-on: ubuntu-latest
