@@ -7,6 +7,7 @@ on:
 permissions:
     issues: write
     pull-requests: write
+    contents: read
 
 jobs:
     stale:
@@ -14,6 +15,7 @@ jobs:
         steps:
             - uses: actions/stale@v8
               with:
+                  repo-token: ${{ secrets.GITHUB_TOKEN }}
                   stale-issue-message: "This issue has been automatically marked as stale becuase it does not have recent activity."
                   days-before-stale: 1
                   days-before-close: 5
