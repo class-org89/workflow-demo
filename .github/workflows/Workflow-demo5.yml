@@ -1,9 +1,14 @@
 name: Repository Events
-on: [push, pull_request, issues]
+on:
+    push:
+    pull_request:
+        types: [opened, reopened, closed]
+    issues:
+        types: [opened, closed]
 
 jobs:
     checkout-test:
-        runs-on: ubuntu-latest
+        runs-on: ubunutu-latest
         steps:
             - run: |
                   echo $GITHUB_SHA
