@@ -1,0 +1,28 @@
+name: Repository Events
+on:
+    pull_request:
+        types: [opened, reopened, closed]
+    issues:
+        types: [opened, closed]
+    push:
+        branches:
+            - main
+            - "feature/*"
+            - "feature/**"
+            - "!feature/featA"
+        tags:
+            - "v1.*"
+            - "!v1.5"
+        paths:
+            - "app/*"
+            - "config/*.yml"
+            - "!docs/*"
+
+jobs:
+    checkout-test:
+        runs-on: ubuntu-latest
+        steps:
+            - run: |
+                  echo $GITHUB_SHA
+                  echo $GITHUB_REF
+            - uses: actions/checkout@v5
