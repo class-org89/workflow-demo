@@ -2,7 +2,7 @@ name: Stale issues and PRs
 on:
     schedule:
         # - cron: "0 14 * * *" # everyday at 2pm
-        - cron: "*/1 * * * *" #every 1 min
+        - cron: "*/5 * * * *" #every 1 min
 
 jobs:
     stale:
