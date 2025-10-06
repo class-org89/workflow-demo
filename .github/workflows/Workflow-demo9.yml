@@ -10,7 +10,7 @@ run-name: "Expressions and Contexts by @${{github.actor}}, event: ${{github.even
 
 jobs:
     runs-on-issues-and-prs:
-        runs-on: ubnutu-latest
+        runs-on: ubuntu-latest
         if: github.event_name == 'issues' || github.event_name == 'pull_request'
         steps:
             - name: Run only if issue has a bug label
