@@ -1,5 +1,11 @@
 name: Expression & Contexts
-on: [push, pull_request, issues]
+on:
+    push:
+        branches: [main]
+    pull_request:
+        types: [opened]
+    issues:
+        types: [opened]
 run-name: "Expressions and Contexts by @${{github.actor}}, event: ${{github.event_name}}"
 
 jobs:
