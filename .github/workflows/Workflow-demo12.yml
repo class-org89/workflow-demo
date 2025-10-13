@@ -1,0 +1,19 @@
+name: Docker
+on: [workflow_dispatch]
+
+jobs:
+    docker-job:
+        runs-on: ubuntu-latest
+        container:
+            image: node:14
+            env:
+                API_URL: some-url.com
+            ports:
+                - 8080:80
+        steps:
+            - name: Log Node & OS Versions
+              run: |
+                  node -v
+                  cat /etc/os-release
+            - name: Check API URL
+              run: echo $API_URL
