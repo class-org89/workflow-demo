@@ -17,3 +17,12 @@ jobs:
                   cat /etc/os-release
             - name: Check API URL
               run: echo $API_URL
+            - name: Container in a step
+              uses: docker://node:18
+              with:
+                  entrypoint: /usr/local/bin/node
+                  args: -p 2+2
+            - name: Log node version
+              uses: docker://node:18
+              with:
+                  args: -v
